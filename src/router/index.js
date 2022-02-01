@@ -1,22 +1,38 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Country from '../views/Country.vue'
+import Cities from '../views/Cities.vue'
+import City from '../views/City.vue'
+import Measurements from '../views/measurements.vue'
+import cityMeasurements from '../views/cityMeasurements.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Countries',
+    component: Country
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/cities',
+    name: 'Cities',
+    component: Cities
+  },
+  {
+    path: '/city/:id',
+    name: 'City',
+    component: City
+  },
+  {
+    path: '/measurements',
+    name: 'measurements',
+    component: Measurements
+  },
+  {
+    path: '/measurements/:id',
+    name: 'filteredMeasurements',
+    component: cityMeasurements
   }
 ]
 
